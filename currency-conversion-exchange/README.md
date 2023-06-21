@@ -6,7 +6,7 @@ Currency Conversion Exchnage Service Project Created in Spring Boot
 
 JAVA, SpringBoot, Maven
 
-Spring Boot : Actuator,  Netflix Eureka, Spring Cloud, JPA, H2 Database, Spring Cloud Config, Open Feign, Resilience4j
+Spring Boot : Actuator,  Netflix Eureka, Spring Cloud, JPA, H2 Database, Spring Cloud Config, Open Feign, Resilience4j, Zipkin
 
 **Small description of each dependency :**
 
@@ -17,6 +17,15 @@ Spring Boot : Actuator,  Netflix Eureka, Spring Cloud, JPA, H2 Database, Spring 
 **Open Feign:** OpenFeign makes writing web service clients easier, used to call other microservice and load balancing.
 
 **Resilience4j:** Resilience4j helps with implementing resilient systems by managing fault tolerance for remote communications. It provide different higher-order method reference with a Circuit Breaker, Rate Limiter, Retry or Bulkhead 
+
+**Zipkin:** Zipkin is a distributed tracing system. It helps gather timing data needed to troubleshoot latency problems in service architectures.
+
+**How to convert microservice to docker image:**
+
+1) Insatll Docker desktop in your machine. 
+2) Add Image configuration in pom.xml file.
+3) Try to build with command (mvn clean spring-boot:build-image).
+4) Run command to start microservice (docker run -p 8000:8000 sbdocker/currency-ms-currency-exchange-service:1.0.0-SNAPSHOT)
 
 **Supported Functionality:**
 
