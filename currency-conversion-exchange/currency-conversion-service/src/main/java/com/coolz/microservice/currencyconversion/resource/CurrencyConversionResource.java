@@ -41,6 +41,9 @@ public class CurrencyConversionResource {
 
 	@Autowired
 	private CurrencyExchangeProxy currencyExchangeProxy;
+	
+	@Autowired
+    private RestTemplate restTemplate;
 
 	/**
 	 * Method used to calculate and currency conversion
@@ -63,7 +66,7 @@ public class CurrencyConversionResource {
 		uriVariables.put("from", from);
 		uriVariables.put("to", to);
 
-		ResponseEntity<CurrencyConversion> responseCurrencyConversion = new RestTemplate().getForEntity(
+		ResponseEntity<CurrencyConversion> responseCurrencyConversion = restTemplate.getForEntity(
 				"http://localhost:8000/currency-exchange/from/{from}/to/{to}", CurrencyConversion.class, uriVariables);
 
 		CurrencyConversion conversion = responseCurrencyConversion.getBody();
@@ -90,6 +93,8 @@ public class CurrencyConversionResource {
 		_log.info("Calling Currency Conversion Feign MicroService");
 
 		CurrencyConversion conversion = currencyExchangeProxy.currencyExchangeFromUSDtoINR(from, to);
+		
+		_log.info("Response From Currency Exchange Service : " + conversion);
 
 		return new CurrencyConversion(conversion.getId(), from, to, conversion.getConversionMultiple(), quantity,
 				quantity.multiply(conversion.getConversionMultiple()), conversion.getEnvironment());

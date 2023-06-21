@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.coolz.microservices</groupId>
 	<artifactId>eureka-naming-server</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>eureka-naming-server</name>
 	<description>Eureka Server is an application that holds the information about all client-service applications. Every Micro service will register into the Eureka server </description>
 	<properties>
@@ -54,6 +54,12 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<image>
+						<name>sbdocker/currency-ms-${project.artifactId}:${project.version}</name>
+					</image>
+					<pullPolicy>IF_NOT_PRESENT</pullPolicy>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
