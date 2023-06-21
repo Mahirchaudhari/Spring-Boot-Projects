@@ -40,16 +40,16 @@ Spring Boot : Actuator,  Netflix Eureka, Spring Cloud, JPA, H2 Database, Spring 
 3) JAR will be generated in each base module.
 4) Excecute JAR and hit different URL based on port mentioned in application.properties
 
-**Useful Docker Command:**
+**Useful Basic Docker Command:**
 
-docker container ls -a : List all the container 
-docker container prune : Remove all the container 
-docker run -p 5000:5000 -d dockerName/app-name:1.0.0-SNAPSHOP : Start the container 
-docker run -p 5000:5000 -d --restart=no dockerName/app-name:1.0.0-SNAPSHOP : It will not start with docker (No Auto start)
-docker run -p 5000:5000 -d --restart=always dockerName/app-name:1.0.0-SNAPSHOP : It will start with docker (Auto start) 
-docker container stop container-id 
-docker events : Log all the event happening with containers
-docker top container-id : Show the processes running 
-docker stats : show the states (CPU, Memory) of the container
-docker container logs -f container-id
-docker system df : docker demains details
+1) docker container ls -a : List all the container
+2) docker container prune : Remove all the container
+3) docker run -p 5000:5000 -d dockerName/app-name:1.0.0-SNAPSHOP : Start the container
+4) docker run -p 5000:5000 -d --restart=no dockerName/app-name:1.0.0-SNAPSHOP : It will not start with docker (No Auto start)
+5) docker run -p 5000:5000 -d --restart=always dockerName/app-name:1.0.0-SNAPSHOP : It will start with docker (Auto start)
+6) docker container stop container-id
+7) docker events : Log all the event happening with containers
+8) docker top container-id : Show the processes running
+9) docker stats : show the states (CPU, Memory) of the container
+10) docker container logs -f container-id
+11) docker system df : docker demains details
